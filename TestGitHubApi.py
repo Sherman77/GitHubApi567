@@ -28,14 +28,10 @@ class TestGitHubApi(unittest.TestCase):
         """Tests for get_commit()"""
         id = 'Sherman77'
         self.assertEqual(get_commit(id, 'Dev'), 3)
-        self.assertEqual(get_commit(id, 'GitHubApi567'), 22)
+        self.assertEqual(get_commit(id, 'Triangle567'), 10)
+        self.assertEqual(get_commit(id, 'SSW567'), 1)
 
 
-
-
-
-
-    
 
 
 if __name__ == '__main__':
