@@ -1,7 +1,7 @@
 """SSW567_HomeWork_Week4
     Xiaomeng Xu"""
 
-import urllib
+import urllib.request
 import json
 from collections import defaultdict
 
