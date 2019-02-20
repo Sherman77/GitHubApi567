@@ -14,9 +14,11 @@ def get_id():
 def get_repository(id):
     """Based on user's ID, retrive names of his/her repositories, return as a list"""
     url = f"https://api.github.com/users/{id}/repos"
-    uh = urllib.request.urlopen(url).read().decode()    #Request data through URL
-    #data = uh.read().decode()  
-    js = json.loads(uh)
+    headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36'}
+    req = urllib.request.Request(url = url, headers = headers)
+    uh = urllib.request.urlopen(req)   #Request data through URL
+    data = uh.read().decode()  
+    js = json.loads(data)
     name = []
     for i in js:
         name.append(i["name"])
@@ -25,9 +27,11 @@ def get_repository(id):
 def get_commit(id, repo_name):
     """Get number of commits based on name of repository, count the commits and return as a number"""
     url = f"https://api.github.com/repos/{id}/{repo_name}/commits"
-    uh = urllib.request.urlopen(url).read().decode()
-    #data = uh.read().decode()
-    js = json.loads(uh)
+    headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36'}
+    req = urllib.request.Request(url = url, headers = headers)
+    uh = urllib.request.urlopen(req)
+    data = uh.read().decode()
+    js = json.loads(data)
     return (len(js))
 
 
