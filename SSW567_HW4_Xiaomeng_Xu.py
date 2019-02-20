@@ -14,9 +14,9 @@ def get_id():
 def get_repository(id):
     """Based on user's ID, retrive names of his/her repositories, return as a list"""
     url = f"https://api.github.com/users/{id}/repos"
-    uh = urllib.request.urlopen(url)    #Request data through URL
-    data = uh.read().decode()  
-    js = json.loads(data)
+    uh = urllib.request.urlopen(url).read().decode()    #Request data through URL
+    #data = uh.read().decode()  
+    js = json.loads(uh)
     name = []
     for i in js:
         name.append(i["name"])
@@ -25,9 +25,9 @@ def get_repository(id):
 def get_commit(id, repo_name):
     """Get number of commits based on name of repository, count the commits and return as a number"""
     url = f"https://api.github.com/repos/{id}/{repo_name}/commits"
-    uh = urllib.request.urlopen(url)
-    data = uh.read().decode()
-    js = json.loads(data)
+    uh = urllib.request.urlopen(url).read().decode()
+    #data = uh.read().decode()
+    js = json.loads(uh)
     return (len(js))
 
 
