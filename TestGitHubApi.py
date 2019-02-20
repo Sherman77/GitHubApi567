@@ -19,11 +19,17 @@ class TestGitHubApi(unittest.TestCase):
         self.assertEqual(get_repository('richkempinski'), output)
         self.assertEqual(get_repository('Richkempinski'), output)
 
+    def test_get_repositopry_03(self):
+        """Tests for get_repository()"""
+        id = 'Sherman897978698'
+        self.assertRaises(ValueError, get_repository, id)
+
     def test_get_commit_01(self):
         """Tests for get_commit()"""
         id = 'Sherman77'
-        repo_name = 'Dev'
-        self.assertEqual(get_commit(id,))
+        self.assertEqual(get_commit(id, 'Dev'), 3)
+        self.assertEqual(get_commit(id, 'GitHubApi567'), 22)
+
 
 
 
