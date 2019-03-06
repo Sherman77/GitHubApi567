@@ -1,4 +1,4 @@
-"""Test for SSW567_HomeWork_Week 4
+"""Test for SSW567_HomeWork 05a
     Xiaomeng Xu"""
 
 import unittest
