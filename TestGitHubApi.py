@@ -32,8 +32,6 @@ class TestGitHubApi(unittest.TestCase):
         self.assertEqual(get_commit(id, 'SSW567'), 1)
 
 
-
-
 if __name__ == '__main__':
     print('Running unit test')
     unittest.main(exit = False, verbosity = 2)
