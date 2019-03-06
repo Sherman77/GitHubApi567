@@ -27,7 +27,7 @@ def get_commit(g_id, repo_name):
     commit = requests.get(url).json()
     return len(commit)
 
-'''def main():
+def main():
     """Main function"""
     switch = True
     while switch:
@@ -43,4 +43,4 @@ def get_commit(g_id, repo_name):
         print(f"Repo: {i}   Number of commits: {get_commit(g_id, i)}")
 
 if __name__ == '__main__':
-    main()'''
+    main()
